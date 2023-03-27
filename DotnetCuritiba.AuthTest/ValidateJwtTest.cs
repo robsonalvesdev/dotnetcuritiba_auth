@@ -1,3 +1,4 @@
+using DotnetCuritiba.AuthLibs.Authentication;
 using DotnetCuritiba.AuthLibs.JwtGenerator;
 using DotnetCuritiba.AuthLibs.Models;
 using FluentAssertions;
@@ -5,6 +6,8 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace DotnetCuritiba.AuthTest ;
 
+    [RequiresThread]
+    [Parallelizable]
     public class Tests
     {
         [SetUp]
@@ -13,7 +16,7 @@ namespace DotnetCuritiba.AuthTest ;
         }
 
         [Test]
-        public void GenerateTokenAndValidate()
+        public async Task GenerateTokenAndValidateAndAuthenticationScopeOpenId()
         {
             var rsaKeys = new RsaKeys
             {
@@ -40,5 +43,13 @@ namespace DotnetCuritiba.AuthTest ;
             
             var validateJwt = jwtHandler.ValidateToken(tokenJwt!);
             validateJwt.Should().BeTrue();
+
+            var auth = new AuthenticationOauth2("http://localhost:8080/realms/dotnetcuritiba/protocol/openid-connect/token", "appclient", "openid", tokenJwt);
+            auth.Should().NotBeNull();
+            
+            var responseAuth = await auth.AuthenticationAsync().ConfigureAwait(false);
+            responseAuth.Should().NotBeNull();
+            
+            Console.WriteLine(responseAuth);
         }
     }

@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCuritiba.AuthLibs", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCuritiba.AuthTest", "DotnetCuritiba.AuthTest\DotnetCuritiba.AuthTest.csproj", "{D651A706-8BCE-470C-AAB0-06D60B0ECFC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCuritiba.WebApiSales", "DotnetCuritiba.WebApiSales\DotnetCuritiba.WebApiSales.csproj", "{F4564B2A-B6C0-4A81-AE3E-ABC210CE3123}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCuritiba.WebApiStock", "DotnetCuritiba.WebApiStock\DotnetCuritiba.WebApiStock.csproj", "{7D35F40C-02C7-46C6-8974-923D0FF51834}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{D651A706-8BCE-470C-AAB0-06D60B0ECFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D651A706-8BCE-470C-AAB0-06D60B0ECFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D651A706-8BCE-470C-AAB0-06D60B0ECFC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4564B2A-B6C0-4A81-AE3E-ABC210CE3123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4564B2A-B6C0-4A81-AE3E-ABC210CE3123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4564B2A-B6C0-4A81-AE3E-ABC210CE3123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4564B2A-B6C0-4A81-AE3E-ABC210CE3123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D35F40C-02C7-46C6-8974-923D0FF51834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D35F40C-02C7-46C6-8974-923D0FF51834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D35F40C-02C7-46C6-8974-923D0FF51834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D35F40C-02C7-46C6-8974-923D0FF51834}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
