@@ -44,7 +44,7 @@ namespace DotnetCuritiba.AuthTest ;
             var validateJwt = jwtHandler.ValidateToken(tokenJwt!);
             validateJwt.Should().BeTrue();
 
-            var auth = new AuthenticationOauth2("http://localhost:8080/realms/dotnetcuritiba/protocol/openid-connect/token", "appclient", "openid", tokenJwt);
+            var auth = new AuthenticationOauth2("http://localhost:8080/realms/dotnetcuritiba/protocol/openid-connect/token", "appclient", "sale", tokenJwt);
             auth.Should().NotBeNull();
             
             var responseAuth = await auth.AuthenticationAsync().ConfigureAwait(false);

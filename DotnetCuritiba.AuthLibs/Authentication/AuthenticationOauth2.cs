@@ -4,7 +4,6 @@
 using DotnetCuritiba.AuthLibs.Models;
 using Newtonsoft.Json;
 using RestSharp;
-using RestSharp.Serializers.NewtonsoftJson;
 
 namespace DotnetCuritiba.AuthLibs.Authentication
 {

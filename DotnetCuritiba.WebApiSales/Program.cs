@@ -1,6 +1,31 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+        {
+            options.Authority = "https://oauth2.prosperainovacao.com.br/realms/consilux";
+            options.RequireHttpsMetadata = false;
+            options.MetadataAddress = "http://localhost:8080/realms/dotnetcuritiba/.well-known/openid-configuration";
+            options.SaveToken = true;
+
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateAudience = false,
+                ValidAudience = "",
+                ValidateIssuerSigningKey = true,
+                ValidateLifetime = true
+            };
+        });
+
+    builder.Services.AddAuthorization(options =>
+    {
+        options.AddPolicy("Sale", policy => policy.RequireClaim("scope", "sale"));
+        options.AddPolicy("Admin", policy => policy.RequireRole("admin"));
+    });
 
     builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -18,6 +43,7 @@ var builder = WebApplication.CreateBuilder(args);
 
     app.UseHttpsRedirection();
 
+    app.UseAuthentication();
     app.UseAuthorization();
 
     app.MapControllers();
