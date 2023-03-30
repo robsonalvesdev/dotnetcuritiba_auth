@@ -18,7 +18,7 @@ namespace DotnetCuritiba.WebApiSales.Controllers
         }
         
         [HttpGet("saleadmin")]
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public IActionResult SalesAdmin()
         {
             return Ok("Access granted to Sale Admin.");

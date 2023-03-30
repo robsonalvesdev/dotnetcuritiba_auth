@@ -18,14 +18,14 @@ namespace DotnetCuritiba.WebApiStock.Controllers
         }
         
         [HttpGet("stockadmin")]
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public IActionResult StockAdmin()
         {
             return Ok("Access granted to Stock Admin.");
         }
         
         [HttpGet("stockadminpolicy")]
-        [Authorize(Policy = "Admin")]
+        //[Authorize(Policy = "Admin")]
         public IActionResult StockAdminPolicy()
         {
             return Ok("Access granted to Stock Admin Policy.");

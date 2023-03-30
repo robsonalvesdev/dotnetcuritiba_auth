@@ -24,7 +24,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddAuthorization(options =>
     {
         options.AddPolicy("Sale", policy => policy.RequireClaim("scope", "sale"));
-        options.AddPolicy("Admin", policy => policy.RequireRole("admin"));
+        //options.AddPolicy("Admin", policy => policy.RequireRole("admin"));
     });
 
     builder.Services.AddControllers();
