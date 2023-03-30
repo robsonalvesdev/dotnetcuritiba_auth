@@ -21,7 +21,6 @@ namespace DotnetCuritiba.AuthLibs.JwtGenerator
 
         public string CreateToken()
         {
-            //var bytesPrivateKey = Convert.FromBase64String(File.ReadAllText("enckey1.pem"));
             ReadOnlySpan<char> bytesPrivateKey = _rsaKeys.PrivateKey;
             
             var tokenHandler = new JwtSecurityTokenHandler();
