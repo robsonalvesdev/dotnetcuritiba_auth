@@ -1,0 +1,39 @@
+# End-point access
+--------------------------------------------------------------------------------------------------
+- http://localhost:8080/realms/dotnetcuritiba/.well-known/openid-configuration
+- "issuer": "http://localhost:8080/realms/dotnetcuritiba",
+- "token_endpoint": "http://localhost:8080/realms/dotnetcuritiba/protocol/openid-connect/token"
+- http://localhost:8080/realms/dotnetcuritiba/.well-known/openid-configuration
+
+# Create key pair RSA
+-------------------------------------------------------------------------------------------------
+openssl genrsa -out private.pem 4096
+openssl rsa -in private.pem -pubout > public.pem
+openssl pkcs8 -in private.pem -topk8 -nocrypt -out private-pkcs8.pem
+cat public.pub | base64
+
+# Alternative
+openssl genrsa -des3 -out key.pem 4096
+openssl rsa -in key.pem -pubout > public2.pem
+openssl pkcs8 -in key.pem -topk8 -nocrypt -out key-pkcs8.pem
+
+# Information PKCS8 openSSL
+https://www.openssl.org/docs/man1.1.1/man1/openssl-pkcs8.html
+https://en.wikipedia.org/wiki/PKCS_8
+
+# Informações sobre oAuth2
+https://oauth.net/2/
+https://www.rfc-editor.org/rfc/rfc6749
+
+# Informações sobre o JWT 
+https://datatracker.ietf.org/doc/html/rfc7519#section-4
+
+"jti" (JWT ID) Claim - ID unico
+"sub" (Subject) Claim - Assunto
+"iss" (Issuer) Claim - Emissor
+"iat" (Issued At) Claim - Emitido em
+"nbf" (Not Before) Claim - Não antes
+"exp" (Expiration Time) Claim - Tempo de expiração
+"aud" (Audience) Claim - Publico
+
+
